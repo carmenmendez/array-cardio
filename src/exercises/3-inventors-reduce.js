@@ -17,13 +17,28 @@ const inventors = [
 // How many years did all the inventors live?
 
 // return the total number of years that all inventors lived
-function getTotalYearsLived(inventors) {}
+function getTotalYearsLived(inventors) {
+  return inventors.reduce((acc, inventor) => {
+    const yearsLived = inventor.passed - inventor.year;
+    return acc + yearsLived
+  }, 0)
+}
 
 // return the total number of letters in all inventors' first names
-function getTotalLettersInFirstNames(inventors) {}
+function getTotalLettersInFirstNames(inventors) {
+  return inventors.reduce((acc, inventor) => {
+    const lettersInFirstName = inventor.first.length;
+    return acc + lettersInFirstName
+  }, 0)
+}
 
 // return the total number of letters in all inventors' last names
-function getTotalLettersInLastNames(inventors) {}
+function getTotalLettersInLastNames(inventors) {
+  return inventors.reduce((acc, inventor) => {
+    const lettersInLastName = inventor.last.length;
+    return acc + lettersInLastName
+  }, 0)
+}
 
 module.exports = {
   inventors,

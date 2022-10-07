@@ -20,31 +20,65 @@ const inventors = [
 
 // Retorna un nuevo arreglo en el que cada elemento sea un objeto que sólo contenga el fullName:
 // ejemplo: ['Albert Einstein', 'Isaac Newton', ...]
-function getFullName(inventors) {}
+function getFullName(inventors) {
+  return inventors.map((inventor) => {
+    return inventor.first + ' ' + inventor.last
+  })
+}
 
 // Retorna un nuevo arreglo que contenga la cantidad de letras que tiene cada first name:
 // ejemplo: [6, 5, 7, 5, 8, ...]
-function getFirstNameLength(inventors) {}
+function getFirstNameLength(inventors) {
+  return inventors.map((inventor) => {
+    return inventor.first.length
+  })
+}
 
 // Retorna un nuevo arreglo que contenga la cantidad de años que vivió cada inventor:
 // ejemplo: [76, 84, 78, 67, ...]
-function getYearsLived(inventors) {}
+function getYearsLived(inventors) {
+  return inventors.map((inventor) => {
+    return inventor.passed - inventor.year
+  })
+}
 
 // Retorna un nuevo arreglo en el que cada inventor contenga el nombre completo y la cantidad de años que vivió:
 // ejemplo: [{ fullName: 'Albert Einstein', yearsLived: 76 }, ...]
-function getFullNameAndYearsLived(inventors) {}
+function getFullNameAndYearsLived(inventors) {
+  return inventors.map((inventor) => {
+    const yearsLived = inventor.passed - inventor.year;
+    const fullName = inventor.first + ' ' + inventor.last;
+    return { fullName, yearsLived }
+  })
+}
 
 // Retorna un nuevo arreglo en el que cada inventor contenga el nombre completo además de sus datos originalmente contenidos:
 // ejemplo: [{ fullName: 'Albert Einstein', first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 }, ...]
-function addFullName(inventors) {}
+function addFullName(inventors) {
+  return inventors.map((inventor) => {
+    const fullName = inventor.first + ' ' + inventor.last;
+    return { fullName,  ...inventor }
+  })
+}
 
 // Retorna un nuevo arreglo en el que cada inventor contenga la cantidad de años que vivió además de sus datos originalmente contenidos:
 // ejemplo: [{ yearsLived: 76, first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 }, ...]
-function addYearsLived(inventors) {}
+function addYearsLived(inventors) {
+  return inventors.map((inventor) => {
+    const yearsLived = inventor. passed - inventor.year
+    return { yearsLived, ...inventor }
+  })
+}
 
 // Retorna un nuevo arreglo en el que cada inventor contenga el nombre completo y la cantidad de años que vivió además de sus datos originalmente contenidos:
 // ejemplo: [{ fullName: 'Albert Einstein', yearsLived: 76, first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 }, ...]
-function addFullNameAndYearsLived(inventors) {}
+function addFullNameAndYearsLived(inventors) {
+  return inventors.map((inventor) => {
+    const fullName = inventor.first + ' ' + inventor.last;
+    const yearsLived = inventor.passed - inventor.year;
+    return { fullName, yearsLived, ...inventor }
+  })
+}
 
 // retorna un nuevo arreglo con el nombre completo de cada inventor separado por el caracter que se recibe como parámetro:
 // ejemplos:
@@ -54,7 +88,11 @@ function addFullNameAndYearsLived(inventors) {}
 
 // ejecutar: getFullNameWithSeparator(inventors, '*****')
 // retorna: ['Albert*****Einstein', 'Isaac*****Newton', ...]
-function getFullNameWithSeparator(inventors, separator) {}
+function getFullNameWithSeparator(inventors, separator) {
+  return inventors.map((inventor) => {
+    return inventor.first + separator + inventor.last 
+  })
+}
 
 module.exports = {
   inventors,

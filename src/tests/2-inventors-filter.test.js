@@ -35,7 +35,7 @@ describe("Inventors - Array.prototype.filter", () => {
       expect(actual).toEqual(expected);
     });
   });
-  describe("filterInventorsByLivedMoreThan50Years", () => {
+  describe("filterInventorsByLivedMoreThan80Years", () => {
     it("should return an array of inventors who lived more than 80 years", () => {
       const expected = [
         {
